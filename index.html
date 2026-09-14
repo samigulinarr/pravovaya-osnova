@@ -102,7 +102,7 @@
             text-decoration: underline;
         }
 
-        /* Плавающая кнопка MAX с обновленной иконкой (квадрат со скруглением) */
+        /* Плавающая кнопка MAX с обновленной иконкой под референс */
         .max-float {
             position: fixed;
             right: 24px;
@@ -137,20 +137,46 @@
             justify-content: center;
             flex-shrink: 0;
             overflow: hidden;
-            padding: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .max-icon-wrap svg {
             width: 100%;
             height: 100%;
+            display: block;
         }
 
-        /* Главный экран (Hero) в премиальном стиле */
+        /* Главный экран (Hero) с фоновой картинкой и градиентом от неё к коричневому цвету */
         .hero {
-            background: linear-gradient(135deg, #382315, #1f120a);
+            position: relative;
+            background: linear-gradient(90deg, #1f120a 35%, rgba(31, 18, 10, 0.85) 65%, rgba(31, 18, 10, 0.4) 100%), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"></svg>'); /* Запасной фон */
+            background-color: #1f120a;
+            /* Вставляем вашу картинку на бэкграунд с плавным переходом */
+            background-image: linear-gradient(90deg, #1f120a 30%, rgba(31, 18, 10, 0.85) 60%, rgba(31, 18, 10, 0.2) 100%), 
+                              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"></svg>');
             color: var(--white);
             padding: 50px 20px;
             text-align: left;
+            overflow: hidden;
+        }
+
+        /* Добавляем вашу картинку весов через псевдоэлемент для идеального контроля градиента */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 60%;
+            background-image: url('image_be99aa.png'); /* Ваша картинка с весами и книгой */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.45;
+            mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%);
+            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%);
+            z-index: 1;
+            pointer-events: none;
         }
 
         .hero-content {
@@ -159,6 +185,8 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h2 {
@@ -606,6 +634,10 @@
                 padding: 40px 15px;
                 text-align: center;
             }
+            .hero::before {
+                width: 100%;
+                opacity: 0.25;
+            }
             .hero-content {
                 align-items: center;
             }
@@ -617,12 +649,19 @@
 </head>
 <body>
 
-    <!-- Плавающая кнопка MAX с квадратной иконкой -->
+    <!-- Плавающая кнопка MAX с точной иконкой из вашего референса -->
     <a class="max-float" href="https://max.ru/u/[хеш]" target="_blank" rel="noopener">
         <div class="max-icon-wrap">
-            <!-- Квадратная иконка в стиле скриншота -->
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 4.5C7.86 4.5 4.5 7.86 4.5 12C4.5 16.14 7.86 19.5 12 19.5C14.15 19.5 16.1 18.62 17.48 17.21L15.93 15.66C14.93 16.63 13.52 17.22 12 17.22C9.11 17.22 6.78 14.89 6.78 12C6.78 9.11 9.11 6.78 12 6.78C13.52 6.78 14.93 7.37 15.93 8.34L17.48 6.79C16.1 5.38 14.15 4.5 12 4.5Z" fill="#3b82f6"/>
+            <!-- Точный логотип-иконка по вашему образцу -->
+            <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="512" height="512" rx="112" fill="url(#paint0_linear)"/>
+                <path d="M375.455 185.818C375.455 125.091 326.182 76 265.455 76C185.091 76 136 128 136 211.273C136 302.545 198.545 363.636 277.818 363.636C312 363.636 341.091 350.545 362.182 328.727L330.909 297.455C315.636 313.455 298.182 321.455 277.818 321.455C222.545 321.455 181.818 277.818 181.818 214.909C181.818 155.636 221.818 118.182 265.455 118.182C300 118.182 328.364 139.636 333.818 174.545H265.455V216.727H373.091C374.545 206.545 375.455 196.364 375.455 185.818Z" fill="#3b82f6"/>
+                <defs>
+                    <linearGradient id="paint0_linear" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#3b82f6"/>
+                        <stop offset="1" stop-color="#8b5cf6"/>
+                    </linearGradient>
+                </defs>
             </svg>
         </div>
         Написать в MAX
@@ -646,7 +685,7 @@
         </div>
     </header>
 
-    <!-- Главный экран -->
+    <!-- Главный экран с фоном-картинкой и градиентом -->
     <section class="hero">
         <div class="hero-content">
             <h2>Правовая основа – юридическое партнерство</h2>
