@@ -22,6 +22,7 @@
 
         html {
             font-size: 16px;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -97,34 +98,28 @@
             text-decoration: underline;
         }
 
-        /* Кнопка MAX по официальной инструкции */
-        .messengers-header {
-            display: flex;
-            gap: 8px;
-            margin-top: 4px;
-            justify-content: flex-end;
-        }
-
-        .messenger-btn.max {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #25d366; /* Будет заменено на гармоничный акцент или фирменный стиль */
-            background: linear-gradient(135deg, #0077ff, #00a2ff);
-            color: #ffffff !important;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 0.85rem;
+        /* Плавающая кнопка MAX */
+        .max-float {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 9999;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: #111827;
+            color: #fff;
             font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 3px 10px rgba(0, 119, 255, 0.25);
-            transition: opacity 0.2s, transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: transform 0.2s, background 0.2s;
         }
 
-        .messenger-btn.max:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-            text-decoration: none;
+        .max-float:hover {
+            transform: translateY(-2px);
+            background: #1f2937;
         }
 
         /* Главный экран (Hero) */
@@ -369,18 +364,74 @@
             color: var(--primary-color);
         }
 
-        /* Карта */
-        .map-section {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
+        /* Блок Контакты и Карта (Двухколоночный в стиле примера) */
+        .contacts-map-section {
+            background: #23160e;
+            color: #ffffff;
+            padding: 60px 20px;
         }
 
-        .map-container {
+        .contacts-map-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: stretch;
+            background: #1f120a;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .contacts-info-box {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contacts-info-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contacts-info-box p, .contacts-info-box a {
+            color: #ddd;
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            display: block;
+        }
+
+        .contacts-info-box a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .contacts-info-box .phones-group {
+            margin: 15px 0;
+        }
+
+        .contacts-info-box .work-time {
+            margin-top: 15px;
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        .map-box-wrapper {
             position: relative;
+            min-height: 400px;
+        }
+
+        .map-box-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
         }
 
         /* Форма заявки */
@@ -439,51 +490,12 @@
 
         /* Подвал */
         footer {
-            background: #1f120a;
-            color: #aaa;
-            padding: 45px 20px 25px;
-            font-size: 0.9rem;
-        }
-
-        .footer-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-
-        .footer-col h4 {
-            color: var(--white);
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        .footer-col p, .footer-col a {
-            color: #bbb;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .footer-col a:hover {
-            color: var(--white);
-            text-decoration: underline;
-        }
-
-        .footer-messengers {
-            display: flex;
-            gap: 10px;
-            margin-top: 12px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
+            background: #150c07;
+            color: #888;
+            padding: 25px 20px;
             font-size: 0.85rem;
-            color: #777;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         /* Адаптивность для мобильных */
@@ -500,8 +512,11 @@
                 text-align: center;
                 align-items: center;
             }
-            .messengers-header {
-                justify-content: center;
+            .contacts-map-container {
+                grid-template-columns: 1fr;
+            }
+            .map-box-wrapper {
+                min-height: 350px;
             }
             .hero {
                 padding: 45px 15px;
@@ -513,6 +528,14 @@
     </style>
 </head>
 <body>
+
+    <!-- Плавающая кнопка MAX -->
+    <a class="max-float" href="https://max.ru/u/[хеш]" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 13.85 2.5 15.55 3.35 17L2 22L7 20.65C8.45 21.5 10.15 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="currentColor"/>
+        </svg>
+        Написать в MAX
+    </a>
 
     <!-- Шапка сайта -->
     <header>
@@ -528,9 +551,6 @@
                 <a href="tel:+78313250426">+7 (8313) 25-04-26</a>
                 <a href="tel:+79307002123">+7 (930) 700-21-23</a>
                 <a href="mailto:250426@list.ru">250426@list.ru</a>
-                <div class="messengers-header">
-                    <a href="https://max.ru/u/[хеш]" target="_blank" class="messenger-btn max">Написать в MAX</a>
-                </div>
             </div>
         </div>
     </header>
@@ -563,7 +583,7 @@
         </div>
     </div>
 
-    <!-- Область экспертизы (Раскрывающиеся блоки с текстом со скриншотов) -->
+    <!-- Область экспертизы (Раскрывающиеся блоки) -->
     <section>
         <h2 class="section-title">Область экспертизы</h2>
         <div class="expertise-text">
@@ -660,12 +680,26 @@
         </div>
     </div>
 
-    <!-- Яндекс Карта (г. Дзержинск, бульвар Правды, 9 с точкой) -->
-    <div class="map-section">
-        <div class="map-container">
-            <div style="position:relative;overflow:hidden;">
-                <a href="https://yandex.ru/maps/org/pravovaya_osnova/1094031649/?utm_source=share&amp;utm_medium=link" style="color:#eee;font-size:12px;position:absolute;top:0px;z-index:1;" target="_blank">Правовая основа в Дзержинске на Яндекс Картах</a>
-                <iframe src="https://yandex.ru/map-widget/v1/?ll=43.438889%2C56.235556&z=16.5&pt=43.438889%2C56.235556%2Cpm2rdl" width="100%" height="450" frameborder="0" allowfullscreen="true" style="position:relative; border:none; display:block;"></iframe>
+    <!-- Блок Контакты и Карта с точкой организации «Адвокаты» -->
+    <div class="contacts-map-section">
+        <div class="contacts-map-container">
+            <div class="contacts-info-box">
+                <h3>ПРАВОВАЯ ОСНОВА</h3>
+                <p>г. Дзержинск, бр. Правды, д. 9</p>
+                <div class="phones-group">
+                    <p style="margin-bottom: 6px; font-weight: 700; color: #fff;">Телефоны:</p>
+                    <a href="tel:+78313250426">+7 (8313) 25-04-26</a>
+                    <a href="tel:+79307002123">+7 (930) 700-21-23</a>
+                    <a href="tel:+79535511135">+7 (953) 551-11-35</a>
+                </div>
+                <p>Почта: <a href="mailto:250426@list.ru" style="display:inline;">250426@list.ru</a></p>
+                <div class="work-time">
+                    Время работы: пн-пт 09:00-18:00
+                </div>
+            </div>
+            <div class="map-box-wrapper">
+                <!-- Карта с точкой организации Адвокаты (координаты 56.235646, 43.438817) -->
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=43.438817%2C56.235646&z=17&mode=search&text=56.235646%2C43.438817" allowfullscreen="true"></iframe>
             </div>
         </div>
     </div>
@@ -685,29 +719,7 @@
 
     <!-- Подвал -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <h4>ПРАВОВАЯ ОСНОВА</h4>
-                <p>г. Дзержинск, бр. Правды, д. 9</p>
-                <p>Время работы: пн-пт 09:00-18:00</p>
-            </div>
-            <div class="footer-col">
-                <h4>Телефоны</h4>
-                <a href="tel:+78313250426">+7 (8313) 25-04-26</a>
-                <a href="tel:+79307002123">+7 (930) 700-21-23</a>
-                <a href="tel:+79535511135">+7 (953) 551-11-35</a>
-            </div>
-            <div class="footer-col">
-                <h4>Контакты и мессенджеры</h4>
-                <a href="mailto:250426@list.ru">250426@list.ru</a>
-                <div class="footer-messengers">
-                    <a href="https://max.ru/u/[хеш]" target="_blank" class="messenger-btn max">Написать в MAX</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; Правовая основа. Все права защищены.
-        </div>
+        &copy; Правовая основа. Все права защищены.
     </footer>
 
     <!-- Скрипт для раскрытия блоков -->
@@ -716,12 +728,10 @@
             const wrapper = element.parentElement;
             const wasActive = wrapper.classList.contains('active');
             
-            // Закрываем все карточки перед открытием новой (опционально, можно убрать для независимого открытия)
             document.querySelectorAll('.audience-card-wrapper').forEach(item => {
                 item.classList.remove('active');
             });
 
-            // Если карточка не была активной, открываем ее
             if (!wasActive) {
                 wrapper.classList.add('active');
             }
