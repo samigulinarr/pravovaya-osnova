@@ -6,13 +6,13 @@
     <title>ПРАВОВАЯ ОСНОВА – Юридическое партнерство в Дзержинске</title>
     <style>
         :root {
-            --primary-color: #5c3a21; /* Фирменный коричневый */
+            --primary-color: #5c3a21;
             --accent-color: #d4a373;
             --bg-color: #fcfbfa;
             --text-color: #2c2c2c;
             --white: #ffffff;
             --gray-light: #f3f0ec;
-            --max-gradient: linear-gradient(135deg, #4b2eff, #9733ee); /* Фирменный градиент Макс */
+            --max-gradient: linear-gradient(135deg, #4b2eff, #9733ee);
         }
 
         * {
@@ -34,7 +34,6 @@
             overflow-x: hidden;
         }
 
-        /* Шапка */
         header {
             background: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -99,7 +98,6 @@
             text-decoration: underline;
         }
 
-        /* Кнопка мессенджера МАХ в шапке */
         .messengers-header {
             display: flex;
             gap: 8px;
@@ -133,7 +131,6 @@
             transform: translateY(-1px);
         }
 
-        /* Главный экран (Hero) */
         .hero {
             background: linear-gradient(135deg, var(--primary-color), #362112);
             color: var(--white);
@@ -187,7 +184,6 @@
             transform: translateY(-2px);
         }
 
-        /* Секция цифр/статистики */
         .stats {
             max-width: 1100px;
             margin: -30px auto 0;
@@ -219,7 +215,6 @@
             font-size: 0.9rem;
         }
 
-        /* Общие стили секций */
         section {
             padding: 60px 20px;
             max-width: 1100px;
@@ -234,7 +229,6 @@
             font-weight: 700;
         }
 
-        /* Экспертиза */
         .expertise-text {
             background: var(--white);
             padding: 35px;
@@ -263,7 +257,6 @@
             box-shadow: 0 4px 15px rgba(92, 58, 33, 0.2);
         }
 
-        /* Преимущества */
         .advantages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -289,7 +282,6 @@
             font-size: 0.9rem;
         }
 
-        /* Отзыв */
         .review-section {
             background: var(--gray-light);
             padding: 60px 20px;
@@ -318,7 +310,6 @@
             color: var(--primary-color);
         }
 
-        /* Карта */
         .map-section {
             padding: 60px 20px;
             max-width: 1100px;
@@ -339,7 +330,6 @@
             border: 0;
         }
 
-        /* Форма заявки */
         .cta-section {
             background: var(--primary-color);
             color: var(--white);
@@ -393,7 +383,6 @@
             background: #faedcd;
         }
 
-        /* Подвал */
         footer {
             background: #1f120a;
             color: #aaa;
@@ -442,7 +431,6 @@
             color: #777;
         }
 
-        /* Адаптивность для мобильных */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -470,7 +458,6 @@
 </head>
 <body>
 
-    <!-- Шапка сайта -->
     <header>
         <div class="header-container">
             <div class="logo-box">
@@ -494,7 +481,6 @@
         </div>
     </header>
 
-    <!-- Главный экран -->
     <section class="hero">
         <div class="hero-content">
             <img src="logo.jpg" alt="Правовая основа" class="main-logo" onerror="this.style.display='none'">
@@ -504,7 +490,6 @@
         </div>
     </section>
 
-    <!-- Блок со статистикой -->
     <div class="stats">
         <div class="stats-grid">
             <div class="stat-item">
@@ -522,7 +507,6 @@
         </div>
     </div>
 
-    <!-- Область экспертизы -->
     <section>
         <h2 class="section-title">Область экспертизы</h2>
         <div class="expertise-text">
@@ -535,7 +519,6 @@
         </div>
     </section>
 
-    <!-- Преимущества -->
     <section style="background: var(--gray-light); max-width: 100%; padding: 60px 20px;">
         <div style="max-width: 1100px; margin: 0 auto;">
             <h2 class="section-title">Наши преимущества</h2>
@@ -571,7 +554,6 @@
         </div>
     </section>
 
-    <!-- Отзыв партнера -->
     <div class="review-section">
         <div class="review-container">
             <div class="review-text">
@@ -582,7 +564,6 @@
         </div>
     </div>
 
-    <!-- Карта по вашей ссылке -->
     <div class="map-section">
         <h2 class="section-title">Мы на карте</h2>
         <div class="map-container">
@@ -590,7 +571,6 @@
         </div>
     </div>
 
-    <!-- Форма заявки -->
     <section id="contact">
         <div class="cta-section">
             <h2>Отправьте запрос на бесплатную консультацию</h2>
@@ -603,7 +583,6 @@
         </div>
     </section>
 
-    <!-- Подвал -->
     <footer>
         <div class="footer-container">
             <div class="footer-col">
