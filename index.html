@@ -110,49 +110,48 @@
             z-index: 9999;
             padding: 8px 16px 8px 8px;
             border-radius: 999px;
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
             color: #fff;
             font-weight: 700;
             font-size: 0.9rem;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+            gap: 10px;
+            box-shadow: 0 4px 20px rgba(49, 46, 129, 0.4);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .max-float:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+            box-shadow: 0 6px 25px rgba(49, 46, 129, 0.6);
         }
 
         .max-icon-wrap {
             width: 32px;
             height: 32px;
-            background: #ffffff;
-            border-radius: 8px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
 
-        .max-icon-wrap svg {
+        .max-icon-wrap img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
             display: block;
         }
 
-        /* Главный экран (Hero) с фоновым изображением весов (как на референсе) */
+        /* Главный экран (Hero) с правильной картинкой весов и градиентом */
         .hero {
             position: relative;
             background-color: #1f120a;
-            /* Плавный переход от сплошного темно-коричневого слева к полупрозрачному справа, поверх картинки весов */
-            background-image: linear-gradient(90deg, #1f120a 35%, rgba(31, 18, 10, 0.9) 65%, rgba(31, 18, 10, 0.4) 100%), 
-                              url('image_bf6eec.jpg');
+            background-image: linear-gradient(90deg, #1f120a 35%, rgba(31, 18, 10, 0.85) 65%, rgba(31, 18, 10, 0.4) 100%), 
+                              url('https://img.magnific.com/free-photo/view-3d-justice-scales_23-2151228164.jpg?semt=ais_hybrid&w=740&q=80');
             background-size: cover;
             background-position: center right;
             color: var(--white);
@@ -592,7 +591,7 @@
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* Адаптивность для мобильных и больших экранов / телевизоров */
+        /* Адаптивность для мобильных и больших экранов */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -628,28 +627,19 @@
 </head>
 <body>
 
-    <!-- Плавающая кнопка MAX -->
+    <!-- Плавающая кнопка MAX с реальным логотипом -->
     <a class="max-float" href="https://max.ru/u/[хеш]" target="_blank" rel="noopener">
         <div class="max-icon-wrap">
-            <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="512" height="512" rx="112" fill="url(#paint0_linear)"/>
-                <path d="M375.455 185.818C375.455 125.091 326.182 76 265.455 76C185.091 76 136 128 136 211.273C136 302.545 198.545 363.636 277.818 363.636C312 363.636 341.091 350.545 362.182 328.727L330.909 297.455C315.636 313.455 298.182 321.455 277.818 321.455C222.545 321.455 181.818 277.818 181.818 214.909C181.818 155.636 221.818 118.182 265.455 118.182C300 118.182 328.364 139.636 333.818 174.545H265.455V216.727H373.091C374.545 206.545 375.455 196.364 375.455 185.818Z" fill="#3b82f6"/>
-                <defs>
-                    <linearGradient id="paint0_linear" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#3b82f6"/>
-                        <stop offset="1" stop-color="#8b5cf6"/>
-                    </linearGradient>
-                </defs>
-            </svg>
+            <img src="мах.jpg" alt="МАКС">
         </div>
         Написать в MAX
     </a>
 
-    <!-- Шапка сайта с обновленной ссылкой на логотип -->
+    <!-- Шапка сайта с вашим официальным логотипом -->
     <header>
         <div class="header-container">
             <a href="#" class="logo-box" onclick="scrollToTop(event)">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThc_QsyTRBrClNpLqRtrwn3yPebqNIAGcaOW0tSGWqxzcIyZNJDYJLBDXX&s=10" alt="Правовая основа" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%235c3a21\'/><text x=\'50\' y=\'55\' fill=\'white\' font-size=\'12\' text-anchor=\'middle\'>ПО</text></svg>'">
+                <img src="logo.jpg" alt="Правовая основа">
                 <div class="logo-text">
                     <h1>Правовая основа</h1>
                     <p>Юридическое партнерство</p>
@@ -663,7 +653,7 @@
         </div>
     </header>
 
-    <!-- Главный экран с фоном весов и текстом -->
+    <!-- Главный экран с фоновой картинкой весов -->
     <section class="hero">
         <div class="hero-content">
             <h2>Правовая основа – юридическое партнерство</h2>
@@ -776,7 +766,7 @@
         </div>
     </section>
 
-    <!-- Карусель отзывов с добавленными отзывами Сафиной Лилии и Фирстовой Татьяны -->
+    <!-- Карусель отзывов -->
     <div class="review-section">
         <h2 class="section-title" style="margin-bottom: 25px;">Отзывы о работе</h2>
         <div class="reviews-carousel-wrapper">
