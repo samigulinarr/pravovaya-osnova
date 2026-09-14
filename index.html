@@ -56,20 +56,20 @@
         .logo-box {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
         }
 
         .logo-box img {
-            width: 38px;
-            height: 38px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             object-fit: cover;
             flex-shrink: 0;
         }
 
         .logo-text h1 {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             color: var(--primary-color);
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -78,7 +78,7 @@
         }
 
         .logo-text p {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: #777;
         }
 
@@ -102,7 +102,7 @@
             text-decoration: underline;
         }
 
-        /* Плавающая кнопка MAX с обновленной иконкой под референс */
+        /* Плавающая кнопка MAX */
         .max-float {
             position: fixed;
             right: 24px;
@@ -131,7 +131,7 @@
             width: 32px;
             height: 32px;
             background: #ffffff;
-            border-radius: 8px; /* Квадрат со скруглением под референс */
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -146,37 +146,19 @@
             display: block;
         }
 
-        /* Главный экран (Hero) с фоновой картинкой и градиентом от неё к коричневому цвету */
+        /* Главный экран (Hero) с фоновым изображением весов (как на референсе) */
         .hero {
             position: relative;
-            background: linear-gradient(90deg, #1f120a 35%, rgba(31, 18, 10, 0.85) 65%, rgba(31, 18, 10, 0.4) 100%), 
-                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"></svg>'); /* Запасной фон */
             background-color: #1f120a;
-            /* Вставляем вашу картинку на бэкграунд с плавным переходом */
-            background-image: linear-gradient(90deg, #1f120a 30%, rgba(31, 18, 10, 0.85) 60%, rgba(31, 18, 10, 0.2) 100%), 
-                              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"></svg>');
+            /* Плавный переход от сплошного темно-коричневого слева к полупрозрачному справа, поверх картинки весов */
+            background-image: linear-gradient(90deg, #1f120a 35%, rgba(31, 18, 10, 0.9) 65%, rgba(31, 18, 10, 0.4) 100%), 
+                              url('image_bf6eec.jpg');
+            background-size: cover;
+            background-position: center right;
             color: var(--white);
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: left;
             overflow: hidden;
-        }
-
-        /* Добавляем вашу картинку весов через псевдоэлемент для идеального контроля градиента */
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 60%;
-            background-image: url('image_be99aa.png'); /* Ваша картинка с весами и книгой */
-            background-size: cover;
-            background-position: center;
-            opacity: 0.45;
-            mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%);
-            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%);
-            z-index: 1;
-            pointer-events: none;
         }
 
         .hero-content {
@@ -283,7 +265,7 @@
             text-align: center;
         }
 
-        /* Интерактивные раскрывающиеся блоки (аккордеоны) */
+        /* Аккордеоны */
         .audience-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -610,7 +592,7 @@
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* Адаптивность для мобильных */
+        /* Адаптивность для мобильных и больших экранов / телевизоров */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -633,10 +615,7 @@
             .hero {
                 padding: 40px 15px;
                 text-align: center;
-            }
-            .hero::before {
-                width: 100%;
-                opacity: 0.25;
+                background-position: center;
             }
             .hero-content {
                 align-items: center;
@@ -649,10 +628,9 @@
 </head>
 <body>
 
-    <!-- Плавающая кнопка MAX с точной иконкой из вашего референса -->
+    <!-- Плавающая кнопка MAX -->
     <a class="max-float" href="https://max.ru/u/[хеш]" target="_blank" rel="noopener">
         <div class="max-icon-wrap">
-            <!-- Точный логотип-иконка по вашему образцу -->
             <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="512" height="512" rx="112" fill="url(#paint0_linear)"/>
                 <path d="M375.455 185.818C375.455 125.091 326.182 76 265.455 76C185.091 76 136 128 136 211.273C136 302.545 198.545 363.636 277.818 363.636C312 363.636 341.091 350.545 362.182 328.727L330.909 297.455C315.636 313.455 298.182 321.455 277.818 321.455C222.545 321.455 181.818 277.818 181.818 214.909C181.818 155.636 221.818 118.182 265.455 118.182C300 118.182 328.364 139.636 333.818 174.545H265.455V216.727H373.091C374.545 206.545 375.455 196.364 375.455 185.818Z" fill="#3b82f6"/>
@@ -667,11 +645,11 @@
         Написать в MAX
     </a>
 
-    <!-- Шапка сайта -->
+    <!-- Шапка сайта с обновленной ссылкой на логотип -->
     <header>
         <div class="header-container">
             <a href="#" class="logo-box" onclick="scrollToTop(event)">
-                <img src="logo.jpg" alt="Правовая основа" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%235c3a21\'/><text x=\'50\' y=\'55\' fill=\'white\' font-size=\'12\' text-anchor=\'middle\'>ПО</text></svg>'">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThc_QsyTRBrClNpLqRtrwn3yPebqNIAGcaOW0tSGWqxzcIyZNJDYJLBDXX&s=10" alt="Правовая основа" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%235c3a21\'/><text x=\'50\' y=\'55\' fill=\'white\' font-size=\'12\' text-anchor=\'middle\'>ПО</text></svg>'">
                 <div class="logo-text">
                     <h1>Правовая основа</h1>
                     <p>Юридическое партнерство</p>
@@ -685,7 +663,7 @@
         </div>
     </header>
 
-    <!-- Главный экран с фоном-картинкой и градиентом -->
+    <!-- Главный экран с фоном весов и текстом -->
     <section class="hero">
         <div class="hero-content">
             <h2>Правовая основа – юридическое партнерство</h2>
@@ -712,7 +690,7 @@
         </div>
     </div>
 
-    <!-- Область экспертизы (Раскрывающиеся блоки) -->
+    <!-- Область экспертизы (Аккордеоны) -->
     <section>
         <h2 class="section-title">Область экспертизы</h2>
         <div class="expertise-text">
@@ -798,7 +776,7 @@
         </div>
     </section>
 
-    <!-- Карусель отзывов -->
+    <!-- Карусель отзывов с добавленными отзывами Сафиной Лилии и Фирстовой Татьяны -->
     <div class="review-section">
         <h2 class="section-title" style="margin-bottom: 25px;">Отзывы о работе</h2>
         <div class="reviews-carousel-wrapper">
@@ -816,6 +794,20 @@
                         "Высочайший уровень профессионализма и оперативности! Все задачи по оформлению и защите интересов были выполнены безупречно. Очень рады, что доверились именно этой команде юристов. Рекомендуем всем, кому важен надежный и гарантированный результат."
                     </div>
                     <div class="review-author">Агния М.</div>
+                    <div style="font-size: 0.85rem; color: #666;">Клиент компании</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-text">
+                        "Хочу выразить огромную благодарность за человечный подход и искреннее участие. В сложной жизненной ситуации мне помогли разобраться во всех тонкостях, поддержали и довели дело до победного конца. Спасибо за ваш труд, чуткость и высочайший профессионализм!"
+                    </div>
+                    <div class="review-author">Сафина Лилия</div>
+                    <div style="font-size: 0.85rem; color: #666;">Клиент компании</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-text">
+                        "Обращалась за консультацией и помощью в оформлении документов. Все было сделано в кратчайшие сроки, четко, грамотно и без лишних нервов. Очень приятно чувствовать себя защищенной, когда рядом настоящие профессионалы своего дела. Обязательно буду рекомендовать вас знакомым!"
+                    </div>
+                    <div class="review-author">Фирстова Татьяна</div>
                     <div style="font-size: 0.85rem; color: #666;">Клиент компании</div>
                 </div>
             </div>
@@ -859,14 +851,13 @@
         </div>
     </section>
 
-    <!-- Подвал с актуальным годом 2026 -->
+    <!-- Подвал -->
     <footer>
         &copy; 2026 Правовая основа. Все права защищены.
     </footer>
 
     <!-- Скрипты -->
     <script>
-        // Функция принудительного возврата наверх сайта при клике на логотип/ссылки
         function scrollToTop(event) {
             event.preventDefault();
             window.scrollTo({
