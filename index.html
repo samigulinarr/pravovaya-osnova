@@ -33,10 +33,10 @@
             overflow-x: hidden;
         }
 
-        /* Шапка */
+        /* Шапка в стиле дорогого юридического бюро */
         header {
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -45,7 +45,7 @@
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 12px 20px;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -56,64 +56,68 @@
         .logo-box {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            text-decoration: none;
         }
 
         .logo-box img {
-            width: 50px;
-            height: 50px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             object-fit: cover;
             flex-shrink: 0;
         }
 
         .logo-text h1 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--primary-color);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-weight: 800;
+            font-weight: 700;
+            line-height: 1.1;
         }
 
         .logo-text p {
-            font-size: 0.75rem;
-            color: #666;
+            font-size: 0.7rem;
+            color: #777;
         }
 
         .header-contacts {
             text-align: right;
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 1px;
         }
 
         .header-contacts a {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
+            transition: opacity 0.2s;
         }
 
         .header-contacts a:hover {
+            opacity: 0.8;
             text-decoration: underline;
         }
 
-        /* Плавающая кнопка MAX в фирменном стиле */
+        /* Плавающая кнопка MAX с обновленной иконкой (квадрат со скруглением) */
         .max-float {
             position: fixed;
             right: 24px;
             bottom: 24px;
             z-index: 9999;
-            padding: 10px 18px 10px 12px;
+            padding: 8px 16px 8px 8px;
             border-radius: 999px;
             background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             color: #fff;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
             transition: transform 0.2s, box-shadow 0.2s;
         }
@@ -127,65 +131,64 @@
             width: 32px;
             height: 32px;
             background: #ffffff;
-            border-radius: 50%;
+            border-radius: 8px; /* Квадрат со скруглением под референс */
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            overflow: hidden;
+            padding: 4px;
         }
 
         .max-icon-wrap svg {
-            width: 20px;
-            height: 20px;
+            width: 100%;
+            height: 100%;
         }
 
-        /* Главный экран (Hero) */
+        /* Главный экран (Hero) в премиальном стиле */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color), #362112);
+            background: linear-gradient(135deg, #382315, #1f120a);
             color: var(--white);
-            padding: 60px 20px;
-            text-align: center;
+            padding: 50px 20px;
+            text-align: left;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
-        }
-
-        .hero img.main-logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid rgba(255,255,255,0.2);
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            object-fit: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .hero h2 {
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
-            margin-bottom: 15px;
-            font-weight: 700;
-            line-height: 1.3;
+            font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 1.25;
+            text-transform: uppercase;
         }
 
         .hero p {
-            font-size: clamp(1rem, 1.5vw, 1.15rem);
-            margin-bottom: 30px;
-            opacity: 0.9;
-            line-height: 1.6;
+            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+            margin-bottom: 25px;
+            opacity: 0.85;
+            line-height: 1.5;
+            max-width: 600px;
         }
 
         .btn {
             display: inline-block;
             background: var(--accent-color);
             color: #2c2c2c;
-            padding: 12px 28px;
-            border-radius: 6px;
+            padding: 11px 24px;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: background 0.2s, transform 0.2s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
         .btn:hover {
@@ -196,7 +199,7 @@
         /* Секция цифр/статистики */
         .stats {
             max-width: 1100px;
-            margin: -30px auto 0;
+            margin: -25px auto 0;
             padding: 0 20px;
             position: relative;
             z-index: 10;
@@ -208,46 +211,46 @@
             gap: 20px;
             background: var(--white);
             padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
             text-align: center;
         }
 
         .stat-item h3 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--primary-color);
-            margin-bottom: 5px;
-            font-weight: 800;
+            margin-bottom: 3px;
+            font-weight: 700;
         }
 
         .stat-item p {
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* Общие стили секций */
         section {
-            padding: 60px 20px;
+            padding: 55px 20px;
             max-width: 1100px;
             margin: 0 auto;
         }
 
         section h2.section-title {
             text-align: center;
-            font-size: clamp(1.6rem, 2.5vw, 2rem);
+            font-size: clamp(1.4rem, 2.2vw, 1.8rem);
             color: var(--primary-color);
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             font-weight: 700;
         }
 
         /* Экспертиза */
         .expertise-text {
             background: var(--white);
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            font-size: 1rem;
-            line-height: 1.8;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            font-size: 0.95rem;
+            line-height: 1.7;
             margin-bottom: 25px;
             text-align: center;
         }
@@ -261,8 +264,8 @@
 
         .audience-card-wrapper {
             background: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             overflow: hidden;
             border: 1px solid rgba(92, 58, 33, 0.1);
         }
@@ -270,9 +273,9 @@
         .audience-card {
             background: var(--primary-color);
             color: var(--white);
-            padding: 22px 25px;
+            padding: 18px 20px;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             display: flex;
@@ -287,14 +290,14 @@
 
         .audience-card::after {
             content: "+";
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 400;
             transition: transform 0.3s;
         }
 
         .audience-card-wrapper.active .audience-card::after {
             content: "×";
-            font-size: 1.6rem;
+            font-size: 1.5rem;
         }
 
         .audience-content {
@@ -302,22 +305,22 @@
             overflow: hidden;
             transition: max-height 0.35s ease-out, padding 0.35s ease;
             background: var(--white);
-            padding: 0 25px;
+            padding: 0 20px;
         }
 
         .audience-card-wrapper.active .audience-content {
             max-height: 600px;
-            padding: 25px;
+            padding: 20px;
         }
 
         .audience-content ul {
             list-style-type: disc;
-            padding-left: 20px;
+            padding-left: 18px;
         }
 
         .audience-content li {
-            margin-bottom: 12px;
-            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
             color: #333;
             line-height: 1.5;
         }
@@ -330,32 +333,32 @@
         .advantages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
 
         .advantage-card {
             background: var(--white);
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            border-top: 4px solid var(--primary-color);
+            padding: 22px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border-top: 3px solid var(--primary-color);
         }
 
         .advantage-card h3 {
             color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1.15rem;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
         }
 
         .advantage-card p {
             color: #555;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
 
         /* Карусель отзывов */
         .review-section {
             background: var(--gray-light);
-            padding: 60px 20px;
+            padding: 55px 20px;
             overflow: hidden;
         }
 
@@ -373,32 +376,32 @@
             overflow-x: auto;
             scroll-behavior: smooth;
             scroll-snap-type: x mandatory;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE/Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
             padding: 10px 5px;
             width: 100%;
         }
 
         .reviews-container::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
         }
 
         .review-card {
             flex: 0 0 100%;
             scroll-snap-align: start;
             background: var(--white);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--primary-color);
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border-left: 4px solid var(--primary-color);
         }
 
         .review-text {
             font-style: italic;
-            font-size: 1.05rem;
-            margin-bottom: 20px;
+            font-size: 1rem;
+            margin-bottom: 18px;
             color: #444;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .review-author {
@@ -413,17 +416,17 @@
             background: var(--white);
             color: var(--primary-color);
             border: 1px solid rgba(92, 58, 33, 0.2);
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             z-index: 10;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            transition: background 0.2s, color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            transition: background 0.2s, color 0.2s;
         }
 
         .carousel-btn:hover {
@@ -432,24 +435,24 @@
         }
 
         .carousel-btn.prev {
-            left: -25px;
+            left: -20px;
         }
 
         .carousel-btn.next {
-            right: -25px;
+            right: -20px;
         }
 
         @media (max-width: 768px) {
             .carousel-btn.prev { left: -10px; }
             .carousel-btn.next { right: -10px; }
-            .review-card { padding: 25px; }
+            .review-card { padding: 20px; }
         }
 
         /* Блок Контакты и Карта */
         .contacts-map-section {
             background: #23160e;
             color: #ffffff;
-            padding: 60px 20px;
+            padding: 55px 20px;
         }
 
         .contacts-map-container {
@@ -460,21 +463,21 @@
             gap: 30px;
             align-items: stretch;
             background: #1f120a;
-            border-radius: 12px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
         .contacts-info-box {
-            padding: 40px;
+            padding: 35px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
         .contacts-info-box h3 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
             color: var(--white);
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -483,8 +486,8 @@
         .contacts-info-box p, .contacts-info-box a {
             color: #ddd;
             text-decoration: none;
-            margin-bottom: 12px;
-            font-size: 1rem;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
             display: block;
         }
 
@@ -494,18 +497,18 @@
         }
 
         .contacts-info-box .phones-group {
-            margin: 15px 0;
+            margin: 12px 0;
         }
 
         .contacts-info-box .work-time {
-            margin-top: 15px;
+            margin-top: 12px;
             color: #aaa;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .map-box-wrapper {
             position: relative;
-            min-height: 400px;
+            min-height: 380px;
         }
 
         .map-box-wrapper iframe {
@@ -520,25 +523,25 @@
             background: var(--primary-color);
             color: var(--white);
             text-align: center;
-            border-radius: 12px;
-            padding: 45px 20px;
-            margin: 40px auto;
+            border-radius: 8px;
+            padding: 40px 20px;
+            margin: 35px auto;
             max-width: 1000px;
         }
 
         .cta-section h2 {
-            margin-bottom: 15px;
-            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            margin-bottom: 12px;
+            font-size: clamp(1.3rem, 2.2vw, 1.7rem);
         }
 
         .cta-section p {
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             opacity: 0.9;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .cta-form {
-            max-width: 420px;
+            max-width: 400px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -546,10 +549,10 @@
         }
 
         .cta-form input {
-            padding: 12px 15px;
-            border-radius: 6px;
+            padding: 11px 14px;
+            border-radius: 4px;
             border: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             outline: none;
         }
 
@@ -557,10 +560,10 @@
             background: var(--accent-color);
             color: #2c2c2c;
             border: none;
-            padding: 12px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 1rem;
+            padding: 11px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: background 0.2s;
         }
@@ -573,7 +576,7 @@
         footer {
             background: #150c07;
             color: #888;
-            padding: 25px 20px;
+            padding: 22px 20px;
             font-size: 0.85rem;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -597,31 +600,29 @@
                 grid-template-columns: 1fr;
             }
             .map-box-wrapper {
-                min-height: 350px;
+                min-height: 320px;
             }
             .hero {
-                padding: 45px 15px;
+                padding: 40px 15px;
+                text-align: center;
+            }
+            .hero-content {
+                align-items: center;
             }
             section {
-                padding: 45px 15px;
+                padding: 40px 15px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Плавающая кнопка MAX в фирменном стиле -->
+    <!-- Плавающая кнопка MAX с квадратной иконкой -->
     <a class="max-float" href="https://max.ru/u/[хеш]" target="_blank" rel="noopener">
         <div class="max-icon-wrap">
+            <!-- Квадратная иконка в стиле скриншота -->
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="url(#paint0_linear)"/>
-                <path d="M12 6.5C8.96 6.5 6.5 8.96 6.5 12C6.5 15.04 8.96 17.5 12 17.5C13.66 17.5 15.14 16.79 16.16 15.66L14.75 14.25C14.07 14.95 13.08 15.38 12 15.38C10.13 15.38 8.62 13.87 8.62 12C8.62 10.13 10.13 8.62 12 8.62C13.08 8.62 14.07 9.05 14.75 9.75L16.16 8.34C15.14 7.21 13.66 6.5 12 6.5Z" fill="#3b82f6"/>
-                <defs>
-                    <linearGradient id="paint0_linear" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#3b82f6"/>
-                        <stop offset="1" stop-color="#8b5cf6"/>
-                    </linearGradient>
-                </defs>
+                <path d="M12 4.5C7.86 4.5 4.5 7.86 4.5 12C4.5 16.14 7.86 19.5 12 19.5C14.15 19.5 16.1 18.62 17.48 17.21L15.93 15.66C14.93 16.63 13.52 17.22 12 17.22C9.11 17.22 6.78 14.89 6.78 12C6.78 9.11 9.11 6.78 12 6.78C13.52 6.78 14.93 7.37 15.93 8.34L17.48 6.79C16.1 5.38 14.15 4.5 12 4.5Z" fill="#3b82f6"/>
             </svg>
         </div>
         Написать в MAX
@@ -630,13 +631,13 @@
     <!-- Шапка сайта -->
     <header>
         <div class="header-container">
-            <div class="logo-box">
-                <img src="logo.jpg" alt="Правовая основа" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%235c3a21\'/><text x=\'50\' y=\'55\' fill=\'white\' font-size=\'12\' text-anchor=\'middle\'>ЛОГОТИП</text></svg>'">
+            <a href="#" class="logo-box" onclick="scrollToTop(event)">
+                <img src="logo.jpg" alt="Правовая основа" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%235c3a21\'/><text x=\'50\' y=\'55\' fill=\'white\' font-size=\'12\' text-anchor=\'middle\'>ПО</text></svg>'">
                 <div class="logo-text">
                     <h1>Правовая основа</h1>
                     <p>Юридическое партнерство</p>
                 </div>
-            </div>
+            </a>
             <div class="header-contacts">
                 <a href="tel:+78313250426">+7 (8313) 25-04-26</a>
                 <a href="tel:+79307002123">+7 (930) 700-21-23</a>
@@ -648,8 +649,7 @@
     <!-- Главный экран -->
     <section class="hero">
         <div class="hero-content">
-            <img src="logo.jpg" alt="Правовая основа" class="main-logo" onerror="this.style.display='none'">
-            <h2>ПРАВОВАЯ ОСНОВА – ЮРИДИЧЕСКОЕ ПАРТНЕРСТВО</h2>
+            <h2>Правовая основа – юридическое партнерство</h2>
             <p>Юридическая компания, которая помогает своим клиентам добиваться целей в современном мире.</p>
             <a href="#contact" class="btn">Получить консультацию</a>
         </div>
@@ -724,10 +724,10 @@
     </section>
 
     <!-- Преимущества -->
-    <section style="background: var(--gray-light); max-width: 100%; padding: 60px 20px;">
+    <section style="background: var(--gray-light); max-width: 100%; padding: 55px 20px;">
         <div style="max-width: 1100px; margin: 0 auto;">
             <h2 class="section-title">Наши преимущества</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 35px; color: #555;">
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 30px; color: #555; font-size: 0.95rem;">
                 Клиенты доверяют нам в самых сложных вопросах, потому что знают, что мы поможем им снизить риски для себя и для бизнеса.
             </p>
             <div class="advantages-grid">
@@ -770,28 +770,28 @@
                         "Мы работаем с командой профессионалов, где клиентам оказывается внимательность к деталям и высокий уровень экспертизы. Нам оказали ценную помощь в решении наших юридических вопросов, предоставив четкие и понятные рекомендации. Быстрое реагирование на запросы и отличное обслуживание клиентов сделали сотрудничество с этой компанией приятным и эффективным."
                     </div>
                     <div class="review-author">Руслан Загрутдинов</div>
-                    <div style="font-size: 0.9rem; color: #666;">Партнер компании</div>
+                    <div style="font-size: 0.85rem; color: #666;">Партнер компании</div>
                 </div>
                 <div class="review-card">
                     <div class="review-text">
                         "Высочайший уровень профессионализма и оперативности! Все задачи по оформлению и защите интересов были выполнены безупречно. Очень рады, что доверились именно этой команде юристов. Рекомендуем всем, кому важен надежный и гарантированный результат."
                     </div>
                     <div class="review-author">Агния М.</div>
-                    <div style="font-size: 0.9rem; color: #666;">Клиент компании</div>
+                    <div style="font-size: 0.85rem; color: #666;">Клиент компании</div>
                 </div>
             </div>
             <button class="carousel-btn next" onclick="scrollReviews(1)">&#10095;</button>
         </div>
     </div>
 
-    <!-- Блок Контакты и Карта с точкой организации «Адвокаты» -->
+    <!-- Блок Контакты и Карта -->
     <div class="contacts-map-section">
         <div class="contacts-map-container">
             <div class="contacts-info-box">
-                <h3>ПРАВОВАЯ ОСНОВА</h3>
+                <h3>Правовая основа</h3>
                 <p>г. Дзержинск, бр. Правды, д. 9</p>
                 <div class="phones-group">
-                    <p style="margin-bottom: 6px; font-weight: 700; color: #fff;">Телефоны:</p>
+                    <p style="margin-bottom: 5px; font-weight: 600; color: #fff; font-size: 0.9rem;">Телефоны:</p>
                     <a href="tel:+78313250426">+7 (8313) 25-04-26</a>
                     <a href="tel:+79307002123">+7 (930) 700-21-23</a>
                     <a href="tel:+79535511135">+7 (953) 551-11-35</a>
@@ -802,7 +802,6 @@
                 </div>
             </div>
             <div class="map-box-wrapper">
-                <!-- Карта с точкой организации Адвокаты (координаты 56.235646, 43.438817) -->
                 <iframe src="https://yandex.ru/map-widget/v1/?ll=43.438817%2C56.235646&z=17&mode=search&text=56.235646%2C43.438817" allowfullscreen="true"></iframe>
             </div>
         </div>
@@ -821,13 +820,22 @@
         </div>
     </section>
 
-    <!-- Подвал -->
+    <!-- Подвал с актуальным годом 2026 -->
     <footer>
-        &copy; Правовая основа. Все права защищены.
+        &copy; 2026 Правовая основа. Все права защищены.
     </footer>
 
     <!-- Скрипты -->
     <script>
+        // Функция принудительного возврата наверх сайта при клике на логотип/ссылки
+        function scrollToTop(event) {
+            event.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
         function toggleAccordion(element) {
             const wrapper = element.parentElement;
             const wasActive = wrapper.classList.contains('active');
