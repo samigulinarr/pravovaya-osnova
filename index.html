@@ -1,608 +1,628 @@
 <!DOCTYPE html>
-<html>
-
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JSFiddle vc8ah34z</title>
-
-  <style>
-    
-  </style>
-
-  
-</head>
-<body>
-  <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ПРАВОВАЯ ОСНОВА – Юридическое партнерство в Дзержинске</title>
     <style>
-      :root {
-          --primary-color: #5c3a21; /* Фирменный коричневый цвет из логотипа */
-          --accent-color: #7b4e2d;
-          --bg-color: #fcfbfa;
-          --text-color: #2c2c2c;
-          --white: #ffffff;
-          --gray-light: #f3f0ec;
-      }
+        :root {
+            --primary-color: #5c3a21; /* Фирменный коричневый */
+            --accent-color: #d4a373;
+            --bg-color: #fcfbfa;
+            --text-color: #2c2c2c;
+            --white: #ffffff;
+            --gray-light: #f3f0ec;
+        }
 
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      body {
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          background-color: var(--bg-color);
-          color: var(--text-color);
-          line-height: 1.6;
-      }
+        html {
+            font-size: 16px;
+        }
 
-      /* Шапка */
-      header {
-          background: var(--white);
-          box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-          position: sticky;
-          top: 0;
-          z-index: 100;
-      }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-      .header-container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 15px 20px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 15px;
-      }
+        /* Шапка */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-      .logo-box {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-      }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-      .logo-box img {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          object-fit: cover;
-      }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-      .logo-text h1 {
-          font-size: 1.1rem;
-          color: var(--primary-color);
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          font-weight: 800;
-      }
+        .logo-box img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
 
-      .logo-text p {
-          font-size: 0.8rem;
-          color: #666;
-      }
+        .logo-text h1 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 800;
+        }
 
-      .header-contacts {
-          text-align: right;
-      }
+        .logo-text p {
+            font-size: 0.75rem;
+            color: #666;
+        }
 
-      .header-contacts a {
-          display: block;
-          color: var(--primary-color);
-          text-decoration: none;
-          font-weight: 600;
-          font-size: 0.95rem;
-      }
+        .header-contacts {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
-      .header-contacts a:hover {
-          text-decoration: underline;
-      }
+        .header-contacts a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
-      /* Главный экран (Hero) */
-      .hero {
-          background: linear-gradient(135deg, var(--primary-color), #362112);
-          color: var(--white);
-          padding: 80px 20px;
-          text-align: center;
-      }
+        .header-contacts a:hover {
+            text-decoration: underline;
+        }
 
-      .hero-content {
-          max-width: 800px;
-          margin: 0 auto;
-      }
+        /* Мессенджеры в шапке */
+        .messengers-header {
+            display: flex;
+            gap: 8px;
+            margin-top: 4px;
+            justify-content: flex-end;
+        }
 
-      .hero img.main-logo {
-          width: 140px;
-          height: 140px;
-          border-radius: 50%;
-          border: 4px solid rgba(255,255,255,0.2);
-          margin-bottom: 25px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-          object-fit: cover;
-      }
+        .messenger-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #25D366;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
 
-      .hero h2 {
-          font-size: 2.2rem;
-          margin-bottom: 20px;
-          font-weight: 700;
-          letter-spacing: 0.5px;
-      }
+        .messenger-btn.max {
+            background: var(--primary-color);
+        }
 
-      .hero p {
-          font-size: 1.15rem;
-          margin-bottom: 35px;
-          opacity: 0.9;
-          line-height: 1.7;
-      }
+        .messenger-btn:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
 
-      .btn {
-          display: inline-block;
-          background: #d4a373;
-          color: #2c2c2c;
-          padding: 14px 32px;
-          border-radius: 6px;
-          text-decoration: none;
-          font-weight: 700;
-          transition: background 0.2s, transform 0.2s;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      }
+        /* Главный экран (Hero) */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #362112);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
 
-      .btn:hover {
-          background: #faedcd;
-          transform: translateY(-2px);
-      }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-      /* Секция цифр/статистики */
-      .stats {
-          max-width: 1100px;
-          margin: -40px auto 0;
-          padding: 0 20px;
-          position: relative;
-          z-index: 10;
-      }
+        .hero img.main-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.2);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            object-fit: cover;
+        }
 
-      .stats-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 20px;
-          background: var(--white);
-          padding: 30px;
-          border-radius: 12px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-          text-align: center;
-      }
+        .hero h2 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
 
-      .stat-item h3 {
-          font-size: 2.5rem;
-          color: var(--primary-color);
-          margin-bottom: 5px;
-          font-weight: 800;
-      }
+        .hero p {
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
 
-      .stat-item p {
-          color: #666;
-          font-size: 0.95rem;
-      }
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #2c2c2c;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
 
-      /* Общие стили секций */
-      section {
-          padding: 70px 20px;
-          max-width: 1100px;
-          margin: 0 auto;
-      }
+        .btn:hover {
+            background: #faedcd;
+            transform: translateY(-2px);
+        }
 
-      section h2.section-title {
-          text-align: center;
-          font-size: 2rem;
-          color: var(--primary-color);
-          margin-bottom: 40px;
-          font-weight: 700;
-      }
+        /* Секция цифр/статистики */
+        .stats {
+            max-width: 1100px;
+            margin: -30px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
 
-      /* Экспертиза */
-      .expertise-text {
-          background: var(--white);
-          padding: 40px;
-          border-radius: 12px;
-          box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-          font-size: 1.05rem;
-          line-height: 1.8;
-          margin-bottom: 30px;
-          text-align: center;
-      }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+        }
 
-      .audience-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 20px;
-      }
+        .stat-item h3 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
 
-      .audience-card {
-          background: var(--primary-color);
-          color: var(--white);
-          padding: 30px;
-          border-radius: 10px;
-          text-align: center;
-          font-size: 1.3rem;
-          font-weight: 600;
-          box-shadow: 0 4px 15px rgba(92, 58, 33, 0.2);
-      }
+        .stat-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
 
-      /* Преимущества */
-      .advantages-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 25px;
-      }
+        /* Общие стили секций */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-      .advantage-card {
-          background: var(--white);
-          padding: 30px;
-          border-radius: 10px;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-          border-top: 4px solid var(--primary-color);
-      }
+        section h2.section-title {
+            text-align: center;
+            font-size: clamp(1.6rem, 2.5vw, 2rem);
+            color: var(--primary-color);
+            margin-bottom: 35px;
+            font-weight: 700;
+        }
 
-      .advantage-card h3 {
-          color: var(--primary-color);
-          margin-bottom: 12px;
-          font-size: 1.2rem;
-      }
+        /* Экспертиза */
+        .expertise-text {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            text-align: center;
+        }
 
-      .advantage-card p {
-          color: #555;
-          font-size: 0.95rem;
-      }
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-      /* Отзыв */
-      .review-section {
-          background: var(--gray-light);
-          padding: 70px 20px;
-      }
+        .audience-card {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(92, 58, 33, 0.2);
+        }
 
-      .review-container {
-          max-width: 800px;
-          margin: 0 auto;
-          background: var(--white);
-          padding: 40px;
-          border-radius: 12px;
-          box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-          border-left: 5px solid var(--primary-color);
-      }
+        /* Преимущества */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
-      .review-text {
-          font-style: italic;
-          font-size: 1.1rem;
-          margin-bottom: 20px;
-          color: #444;
-          line-height: 1.8;
-      }
+        .advantage-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border-top: 4px solid var(--primary-color);
+        }
 
-      .review-author {
-          font-weight: 700;
-          color: var(--primary-color);
-      }
+        .advantage-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
 
-      /* Форма заявки */
-      .cta-section {
-          background: var(--primary-color);
-          color: var(--white);
-          text-align: center;
-          border-radius: 12px;
-          padding: 50px 20px;
-          margin: 50px auto;
-          max-width: 1000px;
-      }
+        .advantage-card p {
+            color: #555;
+            font-size: 0.9rem;
+        }
 
-      .cta-section h2 {
-          margin-bottom: 15px;
-          font-size: 1.8rem;
-      }
+        /* Отзыв */
+        .review-section {
+            background: var(--gray-light);
+            padding: 60px 20px;
+        }
 
-      .cta-section p {
-          margin-bottom: 30px;
-          opacity: 0.9;
-      }
+        .review-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-color);
+        }
 
-      .cta-form {
-          max-width: 450px;
-          margin: 0 auto;
-          display: flex;
-          flex-direction: column;
-          gap: 15px;
-      }
+        .review-text {
+            font-style: italic;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            color: #444;
+            line-height: 1.7;
+        }
 
-      .cta-form input {
-          padding: 14px;
-          border-radius: 6px;
-          border: none;
-          font-size: 1rem;
-      }
+        .review-author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
 
-      .cta-form button {
-          background: #d4a373;
-          color: #2c2c2c;
-          border: none;
-          padding: 14px;
-          border-radius: 6px;
-          font-weight: 700;
-          font-size: 1rem;
-          cursor: pointer;
-          transition: background 0.2s;
-      }
+        /* Карта */
+        .map-section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-      .cta-form button:hover {
-          background: #faedcd;
-      }
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            width: 100%;
+            height: 400px;
+        }
 
-      /* Подвал */
-      footer {
-          background: #1f120a;
-          color: #aaa;
-          padding: 50px 20px 30px;
-          font-size: 0.9rem;
-      }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
-      .footer-container {
-          max-width: 1100px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 30px;
-          margin-bottom: 30px;
-      }
+        /* Форма заявки */
+        .cta-section {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            border-radius: 12px;
+            padding: 45px 20px;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
 
-      .footer-col h4 {
-          color: var(--white);
-          margin-bottom: 15px;
-          font-size: 1.1rem;
-      }
+        .cta-section h2 {
+            margin-bottom: 15px;
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+        }
 
-      .footer-col p, .footer-col a {
-          color: #bbb;
-          text-decoration: none;
-          display: block;
-          margin-bottom: 8px;
-      }
+        .cta-section p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
 
-      .footer-col a:hover {
-          color: var(--white);
-          text-decoration: underline;
-      }
+        .cta-form {
+            max-width: 420px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-      .footer-bottom {
-          text-align: center;
-          border-top: 1px solid rgba(255,255,255,0.1);
-          padding-top: 20px;
-          font-size: 0.85rem;
-          color: #777;
-      }
+        .cta-form input {
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+        }
 
-      /* Адаптивность для мобильных */
-      @media (max-width: 768px) {
-          .header-container {
-              flex-direction: column;
-              text-align: center;
-          }
-          .header-contacts {
-              text-align: center;
-          }
-          .hero h2 {
-              font-size: 1.6rem;
-          }
-          .hero p {
-              font-size: 1rem;
-          }
-      }
+        .cta-form button {
+            background: var(--accent-color);
+            color: #2c2c2c;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .cta-form button:hover {
+            background: #faedcd;
+        }
+
+        /* Подвал */
+        footer {
+            background: #1f120a;
+            color: #aaa;
+            padding: 45px 20px 25px;
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #bbb;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .footer-messengers {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+            }
+            .logo-box {
+                justify-content: center;
+            }
+            .header-contacts {
+                text-align: center;
+                align-items: center;
+            }
+            .messengers-header {
+                justify-content: center;
+            }
+            .hero {
+                padding: 45px 15px;
+            }
+            section {
+                padding: 45px 15px;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+
     <!-- Шапка сайта -->
     <header>
-      <div class="header-container">
-        <div class="logo-box">
-          <img
-            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%235c3a21'/><text x='50' y='55' fill='white' font-size='12' text-anchor='middle'>ЛОГОТИП</text></svg>"
-            alt="Правовая основа логотип"
-            id="logo-img"
-          />
-          <div class="logo-text">
-            <h1>Правовая основа</h1>
-            <p>Юридическое партнерство</p>
-          </div>
+        <div class="header-container">
+            <div class="logo-box">
+                <img src="logo.jpg" alt="Правовая основа" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%235c3a21\'/><text x=\'50\' y=\'55\' fill=\'white\' font-size=\'12\' text-anchor=\'middle\'>ЛОГОТИП</text></svg>'">
+                <div class="logo-text">
+                    <h1>Правовая основа</h1>
+                    <p>Юридическое партнерство</p>
+                </div>
+            </div>
+            <div class="header-contacts">
+                <a href="tel:+78313250426">+7 (8313) 25-04-26</a>
+                <a href="tel:+79307002123">+7 (930) 700-21-23</a>
+                <a href="mailto:250426@list.ru">250426@list.ru</a>
+                <div class="messengers-header">
+                    <a href="https://wa.me/79307002123" target="_blank" class="messenger-btn">WhatsApp</a>
+                    <a href="https://t.me/" target="_blank" class="messenger-btn max">MAX</a>
+                </div>
+            </div>
         </div>
-        <div class="header-contacts">
-          <a href="tel:+78313250426">+7 (8313) 25-04-26</a>
-          <a href="tel:+79307002123">+7 (930) 700-21-23</a>
-          <a href="mailto:250426@list.ru">250426@list.ru</a>
-        </div>
-      </div>
     </header>
 
     <!-- Главный экран -->
     <section class="hero">
-      <div class="hero-content">
-        <!-- Здесь используется ваш оригинальный логотип в адаптивном контейнере -->
-        <img
-          src="logo.jpg"
-          alt="Правовая основа"
-          class="main-logo"
-          onerror="this.style.display='none'"
-        />
-        <h2>ПРАВОВАЯ ОСНОВА – ЮРИДИЧЕСКОЕ ПАРТНЕРСТВО</h2>
-        <p>
-          Юридическая компания, которая помогает своим клиентам добиваться целей
-          в современном мире.
-        </p>
-        <a href="#contact" class="btn">Получить консультацию</a>
-      </div>
+        <div class="hero-content">
+            <img src="logo.jpg" alt="Правовая основа" class="main-logo" onerror="this.style.display='none'">
+            <h2>ПРАВОВАЯ ОСНОВА – ЮРИДИЧЕСКОЕ ПАРТНЕРСТВО</h2>
+            <p>Юридическая компания, которая помогает своим клиентам добиваться целей в современном мире.</p>
+            <a href="#contact" class="btn">Получить консультацию</a>
+        </div>
     </section>
 
     <!-- Блок со статистикой -->
     <div class="stats">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <h3>15</h3>
-          <p>лет успешной юридической практики</p>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>15</h3>
+                <p>лет успешной юридической практики</p>
+            </div>
+            <div class="stat-item">
+                <h3>5247</h3>
+                <p>среднее количество консультаций в месяц</p>
+            </div>
+            <div class="stat-item">
+                <h3>24783</h3>
+                <p>успешных дел, проведенных специалистами нашей фирмы</p>
+            </div>
         </div>
-        <div class="stat-item">
-          <h3>5247</h3>
-          <p>среднее количество консультаций в месяц</p>
-        </div>
-        <div class="stat-item">
-          <h3>24783</h3>
-          <p>успешных дел, проведенных специалистами нашей фирмы</p>
-        </div>
-      </div>
     </div>
 
     <!-- Область экспертизы -->
     <section>
-      <h2 class="section-title">Область экспертизы</h2>
-      <div class="expertise-text">
-        Мы представляем юридическую фирму с разнообразными навыками и
-        готовностью оказать вам помощь в различных аспектах. Мы осуществляем
-        регистрацию и внесение изменений в реестре компаний, а также проводим
-        процедуры ликвидации. Кроме того, мы предоставляем консультации по
-        вопросам недвижимости, управления имуществом и наследственным правам.
-      </div>
-      <div class="audience-grid">
-        <div class="audience-card">Для всех</div>
-        <div class="audience-card">Для граждан</div>
-        <div class="audience-card">Для бизнеса</div>
-      </div>
+        <h2 class="section-title">Область экспертизы</h2>
+        <div class="expertise-text">
+            Мы представляем юридическую фирму с разнообразными навыками и готовностью оказать вам помощь в различных аспектах. Мы осуществляем регистрацию и внесение изменений в реестре компаний, а также проводим процедуры ликвидации. Кроме того, мы предоставляем консультации по вопросам недвижимости, управления имуществом и наследственным правам.
+        </div>
+        <div class="audience-grid">
+            <div class="audience-card">Для всех</div>
+            <div class="audience-card">Для граждан</div>
+            <div class="audience-card">Для бизнеса</div>
+        </div>
     </section>
 
     <!-- Преимущества -->
-    <section
-      style="background: var(--gray-light); max-width: 100%; padding: 70px 20px;"
-    >
-      <div style="max-width: 1100px; margin: 0 auto;">
-        <h2 class="section-title">Наши преимущества</h2>
-        <p
-          style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: #555;"
-        >
-          Клиенты доверяют нам в самых сложных вопросах, потому что знают, что
-          мы поможем им снизить риски для себя и для бизнеса.
-        </p>
-        <div class="advantages-grid">
-          <div class="advantage-card">
-            <h3>Годы практики</h3>
-            <p>
-              Все наши эксперты обладают опытом в юридической практике
-              продолжительностью не менее 5 лет.
+    <section style="background: var(--gray-light); max-width: 100%; padding: 60px 20px;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 class="section-title">Наши преимущества</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 35px; color: #555;">
+                Клиенты доверяют нам в самых сложных вопросах, потому что знают, что мы поможем им снизить риски для себя и для бизнеса.
             </p>
-          </div>
-          <div class="advantage-card">
-            <h3>Конфиденциальность</h3>
-            <p>
-              Мы заключаем соглашение о конфиденциальности, гарантируя, что ваша
-              личная информация будет строго охраняться.
-            </p>
-          </div>
-          <div class="advantage-card">
-            <h3>Персональный подход</h3>
-            <p>
-              Адаптированный подход к каждому клиенту позволяет эффективно
-              решать даже наиболее сложные вопросы.
-            </p>
-          </div>
-          <div class="advantage-card">
-            <h3>Отличный сервис</h3>
-            <p>
-              Наше лидерство на рынке юридических услуг обусловлено
-              предоставлением высококачественного сервиса и высокой оценкой
-              наших клиентов.
-            </p>
-          </div>
-          <div class="advantage-card">
-            <h3>Эффективность</h3>
-            <p>
-              Для каждого дела мы назначаем специалиста, который полностью
-              посвящает свое внимание исключительно вашей компании.
-            </p>
-          </div>
-          <div class="advantage-card">
-            <h3>Выгода</h3>
-            <p>
-              Наши стандартные услуги предоставляются по фиксированным тарифам,
-              что обеспечивает прозрачность в оплате.
-            </p>
-          </div>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <h3>Годы практики</h3>
+                    <p>Все наши эксперты обладают опытом в юридической практике продолжительностью не менее 5 лет.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Конфиденциальность</h3>
+                    <p>Мы заключаем соглашение о конфиденциальности, гарантируя, что ваша личная информация будет строго охраняться.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Персональный подход</h3>
+                    <p>Адаптированный подход к каждому клиенту позволяет эффективно решать даже наиболее сложные вопросы.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Отличный сервис</h3>
+                    <p>Наше лидерство на рынке юридических услуг обусловлено предоставлением высококачественного сервиса и высокой оценкой наших клиентов.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Эффективность</h3>
+                    <p>Для каждого дела мы назначаем специалиста, который полностью посвящает свое внимание исключительно вашей компании.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Выгода</h3>
+                    <p>Наши стандартные услуги предоставляются по фиксированным тарифам, что обеспечивает прозрачность в оплате.</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Отзыв партнера -->
     <div class="review-section">
-      <div class="review-container">
-        <div class="review-text">
-          "Мы работаем с командой профессионалов, где клиентам оказывается
-          внимательность к деталям и высокий уровень экспертизы. Нам оказали
-          ценную помощь в решении наших юридических вопросов, предоставив четкие
-          и понятные рекомендации. Быстрое реагирование на запросы и отличное
-          обслуживание клиентов сделали сотрудничество с этой компанией приятным
-          и эффективным."
+        <div class="review-container">
+            <div class="review-text">
+                "Мы работаем с командой профессионалов, где клиентам оказывается внимательность к деталям и высокий уровень экспертизы. Нам оказали ценную помощь в решении наших юридических вопросов, предоставив четкие и понятные рекомендации. Быстрое реагирование на запросы и отличное обслуживание клиентов сделали сотрудничество с этой компанией приятным и эффективным."
+            </div>
+            <div class="review-author">Руслан Загрутдинов</div>
+            <div style="font-size: 0.9rem; color: #666;">Партнер компании</div>
         </div>
-        <div class="review-author">Руслан Загрутдинов</div>
-        <div style="font-size: 0.9rem; color: #666;">Партнер компании</div>
-      </div>
+    </div>
+
+    <!-- Яндекс Карта -->
+    <div class="map-section">
+        <h2 class="section-title">Мы на карте</h2>
+        <div class="map-container">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7029519ce77ec1c54e389df0f4e370a2569f493596956247c7c3b2f56708b2d1&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+        </div>
     </div>
 
     <!-- Форма заявки -->
     <section id="contact">
-      <div class="cta-section">
-        <h2>Отправьте запрос на бесплатную консультацию</h2>
-        <p>
-          Наш специалист свяжется с вами, чтобы уточнить дату и время встречи
-        </p>
-        <form
-          class="cta-form"
-          onsubmit="event.preventDefault(); alert('Спасибо! Ваша заявка отправлена.');"
-        >
-          <input type="text" placeholder="Ваше имя" required />
-          <input type="tel" placeholder="Номер телефона" required />
-          <button type="submit">Отправить</button>
-        </form>
-      </div>
+        <div class="cta-section">
+            <h2>Отправьте запрос на бесплатную консультацию</h2>
+            <p>Наш специалист свяжется с вами, чтобы уточнить дату и время встречи</p>
+            <form class="cta-form" onsubmit="event.preventDefault(); alert('Спасибо! Ваша заявка отправлена.');">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Номер телефона" required>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
     </section>
 
     <!-- Подвал -->
     <footer>
-      <div class="footer-container">
-        <div class="footer-col">
-          <h4>ПРАВОВАЯ ОСНОВА</h4>
-          <p>г. Дзержинск, бр. Правды, д. 9</p>
-          <p>Время работы: пн-пт 09:00-18:00</p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>ПРАВОВАЯ ОСНОВА</h4>
+                <p>г. Дзержинск, бр. Правды, д. 9</p>
+                <p>Время работы: пн-пт 09:00-18:00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Телефоны</h4>
+                <a href="tel:+78313250426">+7 (8313) 25-04-26</a>
+                <a href="tel:+79307002123">+7 (930) 700-21-23</a>
+                <a href="tel:+79535511135">+7 (953) 551-11-35</a>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты и мессенджеры</h4>
+                <a href="mailto:250426@list.ru">250426@list.ru</a>
+                <div class="footer-messengers">
+                    <a href="https://wa.me/79307002123" target="_blank" class="messenger-btn">WhatsApp</a>
+                    <a href="https://t.me/" target="_blank" class="messenger-btn max">MAX</a>
+                </div>
+            </div>
         </div>
-        <div class="footer-col">
-          <h4>Телефоны</h4>
-          <a href="tel:+78313250426">+7 (8313) 25-04-26</a>
-          <a href="tel:+79307002123">+7 (930) 700-21-23</a>
-          <a href="tel:+79535511135">+7 (953) 551-11-35</a>
+        <div class="footer-bottom">
+            &copy; Правовая основа. Все права защищены.
         </div>
-        <div class="footer-col">
-          <h4>Контакты</h4>
-          <a href="mailto:250426@list.ru">250426@list.ru</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        &copy; Правовая основа. Все права защищены.
-      </div>
     </footer>
-  </body>
-</html>
 
-
-  <script>
-    
-  </script>
 </body>
 </html>
