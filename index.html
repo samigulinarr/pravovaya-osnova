@@ -131,23 +131,15 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             flex-shrink: 0;
-            overflow: hidden;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-            background: #fff;
+            background-image: url('max.jpg');
+            background-size: 350%;
+            background-position: 12% center;
+            background-repeat: no-repeat;
         }
 
-        .max-icon-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-
-        /* Главный экран (Hero) с правильной картинкой весов и смещенным фокусом */
+        /* Главный экран (Hero) */
         .hero {
             position: relative;
             background-color: #1f120a;
@@ -592,7 +584,6 @@
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* Адаптивность для мобильных и больших экранов */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -628,15 +619,13 @@
 </head>
 <body>
 
-    <!-- Плавающая кнопка MAX с реальным логотипом -->
+    <!-- Плавающая кнопка MAX -->
     <a class="max-float" href="https://max.ru/u/[хеш]" target="_blank" rel="noopener">
-        <div class="max-icon-wrap">
-            <img src="мах.jpg" alt="МАКС">
-        </div>
+        <div class="max-icon-wrap"></div>
         Написать в MAX
     </a>
 
-    <!-- Шапка сайта с вашим официальным логотипом -->
+    <!-- Шапка сайта -->
     <header>
         <div class="header-container">
             <a href="#" class="logo-box" onclick="scrollToTop(event)">
@@ -654,7 +643,7 @@
         </div>
     </header>
 
-    <!-- Главный экран с фоновой картинкой весов -->
+    <!-- Главный экран -->
     <section class="hero">
         <div class="hero-content">
             <h2>Правовая основа – юридическое партнерство</h2>
@@ -681,14 +670,13 @@
         </div>
     </div>
 
-    <!-- Область экспертизы (Аккордеоны) -->
+    <!-- Область экспертизы -->
     <section>
         <h2 class="section-title">Область экспертизы</h2>
         <div class="expertise-text">
             Мы представляем юридическую фирму с разнообразными навыками и готовностью оказать вам помощь в различных аспектах. Мы осуществляем регистрацию и внесение изменений в реестре компаний, а также проводим процедуры ликвидации. Кроме того, мы предоставляем консультации по вопросам недвижимости, управления имуществом и наследственным правам.
         </div>
         <div class="audience-grid">
-            <!-- Для всех -->
             <div class="audience-card-wrapper">
                 <div class="audience-card" onclick="toggleAccordion(this)">Для всех</div>
                 <div class="audience-content">
@@ -704,7 +692,6 @@
                 </div>
             </div>
 
-            <!-- Для граждан -->
             <div class="audience-card-wrapper">
                 <div class="audience-card" onclick="toggleAccordion(this)">Для граждан</div>
                 <div class="audience-content">
@@ -716,7 +703,6 @@
                 </div>
             </div>
 
-            <!-- Для бизнеса -->
             <div class="audience-card-wrapper">
                 <div class="audience-card" onclick="toggleAccordion(this)">Для бизнеса</div>
                 <div class="audience-content">
@@ -806,7 +792,7 @@
         </div>
     </div>
 
-    <!-- Блок Контакты и Карта -->
+    <!-- Контакты и Карта -->
     <div class="contacts-map-section">
         <div class="contacts-map-container">
             <div class="contacts-info-box">
