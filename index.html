@@ -102,15 +102,15 @@
             text-decoration: underline;
         }
 
-        /* Плавающая кнопка MAX */
+        /* Плавающая синяя кнопка MAX с иконкой */
         .max-float {
             position: fixed;
-            right: 24px;
-            bottom: 24px;
+            right: 20px;
+            bottom: 20px;
             z-index: 9999;
             padding: 8px 16px 8px 8px;
             border-radius: 999px;
-            background: #0f1016;
+            background: #0066ff;
             color: #fff;
             font-weight: 500;
             font-size: 0.9rem;
@@ -118,13 +118,14 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
         }
 
         .max-float:hover {
             transform: scale(1.03);
+            background: #0052cc;
         }
 
         .max-icon-wrap {
@@ -132,18 +133,12 @@
             height: 32px;
             border-radius: 50%;
             flex-shrink: 0;
-            overflow: hidden;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: #fff;
+            background-image: url('max.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-        }
-
-        .max-icon-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         /* Главный экран (Hero) */
@@ -364,7 +359,7 @@
             font-size: 0.88rem;
         }
 
-        /* Карусель отзывов */
+        /* Карусель отзывов (исправлен адаптив для телефонов и других устройств) */
         .review-section {
             background: var(--gray-light);
             padding: 55px 20px;
@@ -372,22 +367,21 @@
         }
 
         .reviews-carousel-wrapper {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
-            display: flex;
-            align-items: center;
+            padding: 0 45px;
         }
 
         .reviews-container {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             overflow-x: auto;
             scroll-behavior: smooth;
             scroll-snap-type: x mandatory;
             scrollbar-width: none;
             -ms-overflow-style: none;
-            padding: 10px 5px;
+            padding: 10px 0;
             width: 100%;
         }
 
@@ -397,9 +391,10 @@
 
         .review-card {
             flex: 0 0 100%;
+            width: 100%;
             scroll-snap-align: start;
             background: var(--white);
-            padding: 35px;
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             border-left: 4px solid var(--primary-color);
@@ -407,7 +402,7 @@
 
         .review-text {
             font-style: italic;
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 18px;
             color: #444;
             line-height: 1.6;
@@ -425,13 +420,13 @@
             background: var(--white);
             color: var(--primary-color);
             border: 1px solid rgba(92, 58, 33, 0.2);
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             z-index: 10;
             box-shadow: 0 4px 10px rgba(0,0,0,0.06);
@@ -444,17 +439,11 @@
         }
 
         .carousel-btn.prev {
-            left: -20px;
+            left: 0;
         }
 
         .carousel-btn.next {
-            right: -20px;
-        }
-
-        @media (max-width: 768px) {
-            .carousel-btn.prev { left: -10px; }
-            .carousel-btn.next { right: -10px; }
-            .review-card { padding: 20px; }
+            right: 0;
         }
 
         /* Блок Контакты и Карта */
@@ -527,7 +516,7 @@
             display: block;
         }
 
-        /* Форма заявки с новым фоном библиотеки */
+        /* Форма заявки */
         .cta-section {
             position: relative;
             background-image: linear-gradient(rgba(40, 25, 15, 0.85), rgba(30, 18, 10, 0.9)), url('consultation-bg.jpeg');
@@ -585,11 +574,11 @@
             background: #faedcd;
         }
 
-        /* Подвал */
+        /* Подвал (с отступом снизу под плавающую кнопку MAX) */
         footer {
             background: #150c07;
             color: #888;
-            padding: 22px 20px;
+            padding: 22px 20px 80px 20px;
             font-size: 0.85rem;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -630,11 +619,9 @@
 </head>
 <body>
 
-    <!-- Плавающая кнопка MAX -->
+    <!-- Плавающая синяя кнопка MAX с иконкой -->
     <a class="max-float" href="https://max.ru" target="_blank" rel="noopener">
-        <div class="max-icon-wrap">
-            <img src="max.png" alt="MAX">
-        </div>
+        <div class="max-icon-wrap"></div>
         Написать в MAX
     </a>
 
@@ -823,7 +810,7 @@
                 </div>
             </div>
             <div class="map-box-wrapper">
-                <iframe src="https://yandex.ru/map-widget/v1/?ll=43.438817%2C56.235646&z=17&mode=search&text=56.235646%2C43.438817" allowfullscreen="true"></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A32f3ea2d38510fbcf6f8d38ca5d7629b35b6c31bf1c6a7e58df2413e17cfeb7e&amp;source=constructor" allowfullscreen="true"></iframe>
             </div>
         </div>
     </div>
@@ -834,7 +821,7 @@
             <h2>Отправьте запрос на бесплатную консультацию</h2>
             <p>Наш специалист свяжется с вами, чтобы уточнить дату и время встречи</p>
             <form class="cta-form" onsubmit="event.preventDefault(); alert('Спасибо! Ваша заявка отправлена.');">
-                <input type="type" placeholder="Ваше имя" required>
+                <input type="text" placeholder="Ваше имя" required>
                 <input type="tel" placeholder="Номер телефона" required>
                 <button type="submit">Отправить</button>
             </form>
@@ -871,7 +858,7 @@
 
         function scrollReviews(direction) {
             const container = document.getElementById('reviewsContainer');
-            const cardWidth = container.querySelector('.review-card').offsetWidth + 30;
+            const cardWidth = container.querySelector('.review-card').offsetWidth + 20;
             container.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
         }
     </script>
