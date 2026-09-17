@@ -6,7 +6,7 @@
     <title>Юридические услуги и помощь адвоката в Дзержинске | «Правовая основа»</title>
     <meta name="description" content="Профессиональная юридическая помощь в Дзержинске. Адрес: бр. Правды, д. 9. Защита в суде, семейные и жилищные споры, сопровождение бизнеса. Звоните: +7 (8313) 25-04-26">
     
-    <!-- SEO Микроразметка Schema.org для Яндекс и Google (легальный и мощный инструмент) -->
+    <!-- SEO Микроразметка Schema.org для Яндекс и Google -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -166,6 +166,7 @@
             box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
             border: 1px solid rgba(255,255,255,0.2);
             transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
 
         .max-float:hover {
@@ -184,6 +185,67 @@
             background-position: center;
             background-repeat: no-repeat;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        /* Модальное окно с QR-кодом для ПК */
+        .qr-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .qr-modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 340px;
+            width: 90%;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .qr-modal-content img {
+            width: 100%;
+            max-width: 260px;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .qr-modal-content h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .qr-modal-content p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .qr-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .qr-close-btn:hover {
+            color: #000;
         }
 
         /* Главный экран (Hero) */
@@ -664,11 +726,21 @@
 </head>
 <body>
 
-    <!-- Плавающая синяя кнопка MAX с иконкой -->
-    <a class="max-float" href="https://max.ru" target="_blank" rel="noopener">
+    <!-- Умная кнопка MAX: на телефоне сразу открывает ссылку, на ПК открывает модальное окно с QR-кодом -->
+    <a class="max-float" id="maxButton" href="https://max.ru/u/f9LHodD0cOLLWR-oPWaAkkyMMiOfDLZtgri7Q2dNhTj6q1RDQclFbIvl6P4" target="_blank" rel="noopener">
         <div class="max-icon-wrap"></div>
         Написать в MAX
     </a>
+
+    <!-- Модальное окно с QR-кодом (показывается только на ПК/планшетах) -->
+    <div class="qr-modal" id="qrModal">
+        <div class="qr-modal-content">
+            <button class="qr-close-btn" onclick="closeQrModal()">&times;</button>
+            <h3>Написать в MAX</h3>
+            <p>Наведите камеру смартфона на QR-код, чтобы открыть чат с представителем:</p>
+            <img src="qr_max.jpg" alt="QR-код MAX">
+        </div>
+    </div>
 
     <!-- Шапка сайта -->
     <header>
@@ -865,9 +937,11 @@
         <div class="cta-section">
             <h2>Отправьте запрос на бесплатную консультацию в Дзержинске</h2>
             <p>Наш специалист свяжется с вами, чтобы уточнить дату и время встречи на бульваре Правды</p>
-            <form class="cta-form" onsubmit="event.preventDefault(); alert('Спасибо! Ваша заявка отправлена.');">
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="tel" placeholder="Номер телефона" required>
+            
+            <form class="cta-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="hidden" name="_subject" value="Новая заявка с сайта Правовая основа!">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="tel" name="phone" placeholder="Номер телефона" required>
                 <button type="submit">Отправить</button>
             </form>
         </div>
@@ -906,6 +980,35 @@
             const cardWidth = container.querySelector('.review-card').offsetWidth + 20;
             container.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
         }
+
+        // Логика переключения поведение кнопки MAX (Телефон vs Компьютер)
+        const maxButton = document.getElementById('maxButton');
+        const qrModal = document.getElementById('qrModal');
+
+        function closeQrModal() {
+            qrModal.style.display = 'none';
+        }
+
+        // Проверяем, мобильное ли устройство
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        }
+
+        maxButton.addEventListener('click', function(e) {
+            if (!isMobileDevice()) {
+                // Если это компьютер/ноутбук — отменяем переход по ссылке и показываем QR-код
+                e.preventDefault();
+                qrModal.style.display = 'flex';
+            }
+            // Если мобильный — ничего не отменяем, ссылка сработает штатно и откроет чат
+        });
+
+        // Закрытие модального окна при клике на серое поле вокруг него
+        window.addEventListener('click', function(e) {
+            if (e.target === qrModal) {
+                closeQrModal();
+            }
+        });
     </script>
 
 </body>
