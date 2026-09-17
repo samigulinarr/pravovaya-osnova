@@ -683,12 +683,19 @@
             gap: 12px;
         }
 
-        .cta-form input {
+        .cta-form input,
+        .cta-form textarea {
             padding: 11px 14px;
             border-radius: 4px;
             border: none;
             font-size: 0.95rem;
             outline: none;
+            font-family: inherit;
+        }
+
+        .cta-form textarea {
+            resize: vertical;
+            min-height: 80px;
         }
 
         .cta-form button {
@@ -1001,6 +1008,7 @@
                 <input type="hidden" name="_subject" value="Новая заявка с сайта Правовая основа!">
                 <input type="text" name="name" placeholder="Ваше имя" required>
                 <input type="tel" name="phone" placeholder="Номер телефона" required>
+                <textarea name="message" placeholder="Опишите вашу проблему (необязательно)"></textarea>
                 <button type="submit">Отправить</button>
             </form>
 
