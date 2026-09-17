@@ -732,15 +732,25 @@
         Написать в MAX
     </a>
 
-    <!-- Модальное окно с QR-кодом (показывается только на ПК/планшетах) -->
-    <div class="qr-modal" id="qrModal">
-        <div class="qr-modal-content">
-            <button class="qr-close-btn" onclick="closeQrModal()">&times;</button>
-            <h3>Написать в MAX</h3>
-            <p>Наведите камеру смартфона на QR-код, чтобы открыть чат с представителем:</p>
-            <img src="qr_max.jpg" alt="QR-код MAX">
-        </div>
+  <!-- Модальное окно для MAX на компьютере -->
+<div id="qrModal" class="modal" style="display: none;">
+    <div class="modal-content" style="text-align: center; padding: 25px; max-width: 400px; background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+        <span class="close-btn" onclick="closeQrModal()" style="float: right; cursor: pointer; font-size: 24px; font-weight: bold;">&times;</span>
+        
+        <h3 style="margin-top: 10px; margin-bottom: 15px; font-size: 20px;">Связаться через MAX</h3>
+        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Выберите удобный способ:</p>
+        
+        <!-- Кнопка для открытия веб-версии на ПК -->
+        <a href="https://max.ru/u/f9LHodD0cOLLWR-oPWaAkkyMMiOfDLZtgri7Q2dNhTj6q1RDQclFbIvl6P4" target="_blank" class="btn-web-max" style="display: block; background: #007bff; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-bottom: 15px; transition: background 0.2s;">
+            Открыть MAX на компьютере
+        </a>
+        
+        <div style="margin: 15px 0; color: #999; font-size: 13px;">— или отсканируйте QR-код —</div>
+        
+        <!-- Картинка с QR-кодом -->
+        <img src="qr_max.jpg" alt="QR-код MAX" style="width: 180px; height: 180px; object-fit: contain; border-radius: 8px; border: 1px solid #eee;">
     </div>
+</div>
 
     <!-- Шапка сайта -->
     <header>
