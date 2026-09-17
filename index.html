@@ -207,7 +207,7 @@
             padding: 30px;
             border-radius: 12px;
             text-align: center;
-            max-width: 340px;
+            max-width: 360px;
             width: 90%;
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             position: relative;
@@ -215,11 +215,12 @@
 
         .qr-modal-content img {
             width: 100%;
-            max-width: 260px;
+            max-width: 180px;
             height: auto;
             border-radius: 8px;
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #eee;
         }
 
         .qr-modal-content h3 {
@@ -231,6 +232,32 @@
         .qr-modal-content p {
             color: #666;
             font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        /* Кнопка для открытия веб-версии на ПК внутри модального окна */
+        .btn-web-max {
+            display: block;
+            background: #0066ff;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-web-max:hover {
+            background: #0052cc;
+        }
+
+        .qr-divider {
+            margin: 12px 0;
+            color: #999;
+            font-size: 0.8rem;
         }
 
         .qr-close-btn {
@@ -732,25 +759,24 @@
         Написать в MAX
     </a>
 
-  <!-- Модальное окно для MAX на компьютере -->
-<div id="qrModal" class="modal" style="display: none;">
-    <div class="modal-content" style="text-align: center; padding: 25px; max-width: 400px; background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
-        <span class="close-btn" onclick="closeQrModal()" style="float: right; cursor: pointer; font-size: 24px; font-weight: bold;">&times;</span>
-        
-        <h3 style="margin-top: 10px; margin-bottom: 15px; font-size: 20px;">Связаться через MAX</h3>
-        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Выберите удобный способ:</p>
-        
-        <!-- Кнопка для открытия веб-версии на ПК -->
-        <a href="https://max.ru/u/f9LHodD0cOLLWR-oPWaAkkyMMiOfDLZtgri7Q2dNhTj6q1RDQclFbIvl6P4" target="_blank" class="btn-web-max" style="display: block; background: #007bff; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-bottom: 15px; transition: background 0.2s;">
-            Открыть MAX на компьютере
-        </a>
-        
-        <div style="margin: 15px 0; color: #999; font-size: 13px;">— или отсканируйте QR-код —</div>
-        
-        <!-- Картинка с QR-кодом -->
-        <img src="qr_max.jpg" alt="QR-код MAX" style="width: 180px; height: 180px; object-fit: contain; border-radius: 8px; border: 1px solid #eee;">
+    <!-- Модальное окно с QR-кодом и кнопкой для ПК -->
+    <div class="qr-modal" id="qrModal">
+        <div class="qr-modal-content">
+            <button class="qr-close-btn" onclick="closeQrModal()">&times;</button>
+            <h3>Связаться через MAX</h3>
+            <p>Выберите удобный способ связи:</p>
+            
+            <!-- Кнопка для открытия веб-версии на ПК в один клик -->
+            <a href="https://max.ru/u/f9LHodD0cOLLWR-oPWaAkkyMMiOfDLZtgri7Q2dNhTj6q1RDQclFbIvl6P4" target="_blank" class="btn-web-max">
+                Открыть MAX на компьютере
+            </a>
+            
+            <div class="qr-divider">— или отсканируйте QR-код —</div>
+            
+            <!-- Картинка с QR-кодом -->
+            <img src="qr_max.jpg" alt="QR-код MAX">
+        </div>
     </div>
-</div>
 
     <!-- Шапка сайта -->
     <header>
@@ -991,7 +1017,7 @@
             container.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
         }
 
-        // Логика переключения поведение кнопки MAX (Телефон vs Компьютер)
+        // Логика переключения поведения кнопки MAX (Телефон vs Компьютер)
         const maxButton = document.getElementById('maxButton');
         const qrModal = document.getElementById('qrModal');
 
@@ -1006,7 +1032,7 @@
 
         maxButton.addEventListener('click', function(e) {
             if (!isMobileDevice()) {
-                // Если это компьютер/ноутбук — отменяем переход по ссылке и показываем QR-код
+                // Если это компьютер/ноутбук — отменяем переход по ссылке и показываем модальное окно с выбором
                 e.preventDefault();
                 qrModal.style.display = 'flex';
             }
