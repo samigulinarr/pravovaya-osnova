@@ -6,6 +6,10 @@
     <title>Юридические услуги и помощь адвоката в Дзержинске | «Правовая основа»</title>
     <meta name="description" content="Профессиональная юридическая помощь в Дзержинске. Адрес: бр. Правды, д. 9. Защита в суде, семейные и жилищные споры, сопровождение бизнеса. Звоните: +7 (8313) 25-04-26">
     
+    <!-- PWA / Manifest & Theme -->
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#5c3a21">
+    
     <!-- Open Graph для соцсетей и мессенджеров -->
     <meta property="og:title" content="Юридические услуги и помощь адвоката в Дзержинске | «Правовая основа»">
     <meta property="og:description" content="Профессиональная юридическая помощь в Дзержинске. Защита в суде, семейные и жилищные споры.">
@@ -37,25 +41,26 @@
         "latitude": 56.235646,
         "longitude": 43.438817
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ]
     }
     </script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <style>
         :root {
             --primary-color: #5c3a21; /* Фирменный коричневый */
@@ -942,7 +947,7 @@
         </div>
     </section>
 
-    <!-- Карусель отзывов -->
+    <!-- Карусель отзывов (Заголовок строго по центру внутри центрирующего контейнера) -->
     <div class="review-section">
         <div style="max-width: 1100px; margin: 0 auto;">
             <h2 class="section-title" style="margin-bottom: 25px;">Отзывы о работе</h2>
@@ -997,7 +1002,7 @@
                 </div>
                 <p>Почта: <a href="mailto:250426@list.ru" style="display:inline;">250426@list.ru</a></p>
                 <div class="work-time">
-                    Время работы: пн-пт 09:00-18:00
+                    Время работы: пн-чт 09:00-18:00, пт 09:00-17:00
                 </div>
             </div>
             <div class="map-box-wrapper">
