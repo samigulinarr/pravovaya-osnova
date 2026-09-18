@@ -1006,6 +1006,12 @@
             <!-- Сама форма с уникальным ID для скрипта -->
             <form id="contactForm" class="cta-form" action="https://formspree.io/f/moevqlvl" method="POST">
                 <input type="hidden" name="_subject" value="Новая заявка с сайта Правовая основа!">
+                
+                <!-- Скрытое поле-ловушка от ботов (человек его не видит, бот заполняет и блокируется) -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="bot_check" tabindex="-1" value="">
+                </div>
+
                 <input type="text" name="name" placeholder="Ваше имя" required>
                 <input type="tel" name="phone" placeholder="Номер телефона" required>
                 <textarea name="message" placeholder="Опишите вашу проблему (необязательно)"></textarea>
@@ -1079,11 +1085,17 @@
             }
         });
 
-        // AJAX отправка формы (клиент остается на сайте, появляется красивое сообщение)
+        // AJAX отправка формы с защитой от ботов (ловушка)
         document.getElementById("contactForm").addEventListener("submit", async function(e) {
             e.preventDefault();
             const form = e.target;
             const data = new FormData(form);
+            
+            // Если сработало скрытое поле (заполнил бот), прекращаем отправку
+            if (data.get("bot_check")) {
+                return;
+            }
+
             const successBlock = document.getElementById("formSuccessMessage");
             
             try {
