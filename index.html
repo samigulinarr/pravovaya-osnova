@@ -726,6 +726,24 @@
             background: #faedcd;
         }
 
+        /* Текст согласия на обработку персональных данных */
+        .privacy-policy-text {
+            font-size: 0.75rem;
+            color: #ccc;
+            line-height: 1.4;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        .privacy-policy-text a {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .privacy-policy-text a:hover {
+            color: #fff;
+        }
+
         /* Стили для сообщения об успешной отправке прямо на сайте */
         .form-success-message {
             display: none;
@@ -1030,6 +1048,9 @@
                 <input type="tel" name="phone" placeholder="Номер телефона" required>
                 <textarea name="message" placeholder="Опишите вашу проблему (необязательно)"></textarea>
                 <button type="submit">Отправить</button>
+                <div class="privacy-policy-text">
+                    Нажимая кнопку «Отправить», вы даете согласие на <a href="#" target="_blank">обработку персональных данных</a>
+                </div>
             </form>
 
             <!-- Блок благодарности (появляется вместо формы после успешной отправки) -->
