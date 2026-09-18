@@ -6,6 +6,13 @@
     <title>Юридические услуги и помощь адвоката в Дзержинске | «Правовая основа»</title>
     <meta name="description" content="Профессиональная юридическая помощь в Дзержинске. Адрес: бр. Правды, д. 9. Защита в суде, семейные и жилищные споры, сопровождение бизнеса. Звоните: +7 (8313) 25-04-26">
     
+    <!-- Open Graph для соцсетей и мессенджеров -->
+    <meta property="og:title" content="Юридические услуги и помощь адвоката в Дзержинске | «Правовая основа»">
+    <meta property="og:description" content="Профессиональная юридическая помощь в Дзержинске. Защита в суде, семейные и жилищные споры.">
+    <meta property="og:image" content="https://pravovaya-osnova.ru/logo.jpg">
+    <meta property="og:url" content="https://pravovaya-osnova.ru/">
+    <meta property="og:type" content="website">
+
     <!-- SEO Микроразметка Schema.org для Яндекс и Google -->
     <script type="application/ld+json">
     {
@@ -113,7 +120,7 @@
             flex-shrink: 0;
         }
 
-        .logo-text h1 {
+        .logo-text h1.logo-title {
             font-size: 1.05rem;
             color: var(--primary-color);
             text-transform: uppercase;
@@ -298,7 +305,7 @@
             z-index: 2;
         }
 
-        .hero h2 {
+        .hero h1 {
             font-size: clamp(1.4rem, 2.2vw, 1.9rem);
             margin-bottom: 12px;
             font-weight: 600;
@@ -813,7 +820,7 @@
             <a href="#" class="logo-box" onclick="scrollToTop(event)">
                 <img src="logo.jpg" alt="Правовая основа Дзержинск">
                 <div class="logo-text">
-                    <h1>Правовая основа</h1>
+                    <h1 class="logo-title">Правовая основа</h1>
                     <p>Юридическое партнерство в Дзержинске</p>
                 </div>
             </a>
@@ -828,7 +835,7 @@
     <!-- Главный экран -->
     <section class="hero">
         <div class="hero-content">
-            <h2>Юридические услуги и помощь адвоката в Дзержинске</h2>
+            <h1>Юридические услуги и помощь адвоката в Дзержинске</h1>
             <p>Юридическое партнерство «Правовая основа»: профессиональная защита интересов граждан и бизнеса в Дзержинске и Нижегородской области.</p>
             <a href="#contact" class="btn">Получить консультацию</a>
         </div>
@@ -937,40 +944,42 @@
 
     <!-- Карусель отзывов -->
     <div class="review-section">
-        <h2 class="section-title" style="margin-bottom: 25px;">Отзывы о работе</h2>
-        <div class="reviews-carousel-wrapper">
-            <button class="carousel-btn prev" onclick="scrollReviews(-1)">&#10094;</button>
-            <div class="reviews-container" id="reviewsContainer">
-                <div class="review-card">
-                    <div class="review-text">
-                        "Мы работаем с командой профессионалов, где клиентам оказывается внимательность к деталям и высокий уровень экспертизы. Нам оказали ценную помощь в решении наших юридических вопросов, предоставив четкие и понятные рекомендации. Быстрое реагирование на запросы и отличное обслуживание клиентов сделали сотрудничество с этой компанией приятным и эффективным."
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 class="section-title" style="margin-bottom: 25px;">Отзывы о работе</h2>
+            <div class="reviews-carousel-wrapper">
+                <button class="carousel-btn prev" onclick="scrollReviews(-1)">&#10094;</button>
+                <div class="reviews-container" id="reviewsContainer">
+                    <div class="review-card">
+                        <div class="review-text">
+                            "Мы работаем с командой профессионалов, где клиентам оказывается внимательность к деталям и высокий уровень экспертизы. Нам оказали ценную помощь в решении наших юридических вопросов, предоставив четкие и понятные рекомендации. Быстрое реагирование на запросы и отличное обслуживание клиентов сделали сотрудничество с этой компанией приятным и эффективным."
+                        </div>
+                        <div class="review-author">Руслан Загрутдинов</div>
+                        <div style="font-size: 0.85rem; color: #666;">Партнер компании</div>
                     </div>
-                    <div class="review-author">Руслан Загрутдинов</div>
-                    <div style="font-size: 0.85rem; color: #666;">Партнер компании</div>
-                </div>
-                <div class="review-card">
-                    <div class="review-text">
-                        "Высочайший уровень профессионализма и оперативности! Все задачи по оформлению и защите интересов были выполнены безупречно. Очень рады, что доверились именно этой команде юристов. Рекомендуем всем, кому важен надежный и гарантированный результат."
+                    <div class="review-card">
+                        <div class="review-text">
+                            "Высочайший уровень профессионализма и оперативности! Все задачи по оформлению и защите интересов были выполнены безупречно. Очень рады, что доверились именно этой команде юристов. Рекомендуем всем, кому важен надежный и гарантированный результат."
+                        </div>
+                        <div class="review-author">Агния М.</div>
+                        <div style="font-size: 0.85rem; color: #666;">Клиент компании</div>
                     </div>
-                    <div class="review-author">Агния М.</div>
-                    <div style="font-size: 0.85rem; color: #666;">Клиент компании</div>
-                </div>
-                <div class="review-card">
-                    <div class="review-text">
-                        "Хочу выразить огромную благодарность за человечный подход и искреннее участие. В сложной жизненной ситуации мне помогли разобраться во всех тонкостях, поддержали и довели дело до победного конца. Спасибо за ваш труд, чуткость и высочайший профессионализм!"
+                    <div class="review-card">
+                        <div class="review-text">
+                            "Хочу выразить огромную благодарность за человечный подход и искреннее участие. В сложной жизненной ситуации мне помогли разобраться во всех тонкостях, поддержали и довели дело до победного конца. Спасибо за ваш труд, чуткость и высочайший профессионализм!"
+                        </div>
+                        <div class="review-author">Сафина Лилия</div>
+                        <div style="font-size: 0.85rem; color: #666;">Клиент компании</div>
                     </div>
-                    <div class="review-author">Сафина Лилия</div>
-                    <div style="font-size: 0.85rem; color: #666;">Клиент компании</div>
-                </div>
-                <div class="review-card">
-                    <div class="review-text">
-                        "Обращалась за консультацией и помощью в оформлении документов. Все было сделано в кратчайшие сроки, четко, грамотно и без лишних нервов. Очень приятно чувствовать себя защищенной, когда рядом настоящие профессионалы своего дела. Обязательно буду рекомендовать вас знакомым!"
+                    <div class="review-card">
+                        <div class="review-text">
+                            "Обращалась за консультацией и помощью в оформлении документов. Все было сделано в кратчайшие сроки, четко, грамотно и без лишних нервов. Очень приятно чувствовать себя защищенной, когда рядом настоящие профессионалы своего дела. Обязательно буду рекомендовать вас знакомым!"
+                        </div>
+                        <div class="review-author">Фирстова Татьяна</div>
+                        <div style="font-size: 0.85rem; color: #666;">Клиент компании</div>
                     </div>
-                    <div class="review-author">Фирстова Татьяна</div>
-                    <div style="font-size: 0.85rem; color: #666;">Клиент компании</div>
                 </div>
+                <button class="carousel-btn next" onclick="scrollReviews(1)">&#10095;</button>
             </div>
-            <button class="carousel-btn next" onclick="scrollReviews(1)">&#10095;</button>
         </div>
     </div>
 
@@ -988,7 +997,7 @@
                 </div>
                 <p>Почта: <a href="mailto:250426@list.ru" style="display:inline;">250426@list.ru</a></p>
                 <div class="work-time">
-                    Время работы: пн-чт 09:00-18:00, пт 09:00-17:00
+                    Время работы: пн-пт 09:00-18:00
                 </div>
             </div>
             <div class="map-box-wrapper">
@@ -1007,7 +1016,7 @@
             <form id="contactForm" class="cta-form" action="https://formspree.io/f/moevqlvl" method="POST">
                 <input type="hidden" name="_subject" value="Новая заявка с сайта Правовая основа!">
                 
-                <!-- Скрытое поле-ловушка от ботов (человек его не видит, бот заполняет и блокируется) -->
+                <!-- Скрытое поле-ловушка от ботов -->
                 <div style="position: absolute; left: -5000px;" aria-hidden="true">
                     <input type="text" name="bot_check" tabindex="-1" value="">
                 </div>
